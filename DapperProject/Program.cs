@@ -1,10 +1,12 @@
 using DapperProject.Context;
 using DapperProject.Services.AgentServices;
 using DapperProject.Services.CategoryServices;
+using DapperProject.Services.KaggleDatasetServices;
 using DapperProject.Services.LocationServices;
 using DapperProject.Services.PaginatedServices;
 using DapperProject.Services.ProductServices;
 using DapperProject.Services.PropertyServices;
+using DapperProject.Services.RealEstateListingServices;
 using DapperProject.Services.SliderServices;
 using DapperProject.Services.StatisticsServices;
 using DapperProject.Services.TagServices;
@@ -25,6 +27,8 @@ builder.Services.AddScoped<IPropertyService, PropertyService>();
 builder.Services.AddScoped<ITagService, TagService>();
 builder.Services.AddScoped<ILocationService, LocationService>();
 builder.Services.AddScoped<IStatisticsService, StatisticsService>();
+builder.Services.AddScoped<IDataSetService, DataSetService>();
+builder.Services.AddScoped<IRealEstateListingService, RealEstateListingService>();
 
 
 
