@@ -1,0 +1,66 @@
+﻿@model List<DapperProject.Dtos.PropertyDtos.ResultPropertyWithCategoryAndLocationDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-md-12 mt-5">
+    <div class="white_shd full margin_bottom_30">
+        <div class="full graph_head">
+            <div class="heading1 margin_0">
+                <h2>İlan Listesi</h2>
+            </div>
+        </div>
+        <div class="table_section padding_infor_info">
+            <div class="table-responsive-sm">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>İlan Başlığı</th>
+                            <th>Metrekare</th>
+                            <th>Yatak Sayısı</th>
+                            <th>Banyo Sayısı</th>
+                            <th>Kategori</th>
+                            <th>Adres</th>
+                            <th>Fiyat</th>
+                            <th>Durum</th>
+                       
+                            <th>Sil</th>
+                            <th>Güncelle</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model.Count > 0)
+                        {
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.PropertyId</td>
+                                    <td>@item.PropertyName</td>
+                                    <td>@item.AreaSize</td>
+                                    <td>@item.BedroomCount</td>
+                                    <td>@item.BathroomCount</td>
+                                    <td>@item.CategoryName</td>
+                                    <td>@item.Address</td>
+                                    <td>@item.Price</td>
+                           
+                                    <td>@(item.ForRent ? "Kiralık" : "Satılık")</td>
+
+
+                                    <td><a href="/Admin/Property/DeleteProperty/@item.PropertyId" class="btn btn-danger">Sil</a></td>
+                                    <td><a href="/Admin/Property/UpdateProperty/@item.PropertyId" class="btn btn-warning">Güncelle</a></td>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <div class="alert alert-warning">Herhangi bir kayıt bulunamadı.</div>
+                        }
+                    </tbody>
+                </table>
+                <a href="/Admin/Property/CreateProperty" class="btn btn-primary">Yeni İlan Girişi</a>
+            </div>
+        </div>
+    </div>
+</div>

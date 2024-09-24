@@ -1,0 +1,117 @@
+﻿@model DapperProject.Dtos.PropertyDtos.SearchPropertyDto
+
+
+<section class="ftco-search">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 search-wrap">
+                <h2 class="heading h5 d-flex align-items-center pr-4"><span class="ion-ios-search mr-3"></span> Ara...</h2>
+                <form asp-action="SearchProperty" asp-controller="Property" method="post" class="search-property">
+                    <div class="row">
+                        <div class="col-md align-items-end">
+                            <div class="form-group">
+                                <label for="#">Emlak Kategori</label>
+                                <div class="form-field">
+                                    <div class="select-wrap">
+                                        <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+                                        <select asp-for="CategoryId" class="form-control text-black">
+                                            @foreach (var item in ViewBag.categories)
+                                            {
+                                                <option value="@item.CategoryId" style="color:black;">@item.CategoryName</option>
+                                            }
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md align-items-end">
+                            <div class="form-group">
+                                <label for="#">Min. Yatak Odası</label>
+                                <div class="form-field">
+                                    <div class="select-wrap">
+                                        <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+                                        <select asp-for="MinimumBedroomCount" class="form-control">
+                                            <option value="1" style="color:black;">1</option>
+                                            <option value="2" style="color:black;">2</option>
+                                            <option value="3" style="color:black;">3</option>
+                                            <option value="4" style="color:black;">4</option>
+                                            <option value="5" style="color:black;">5</option>
+                                            <option value="6" style="color:black;">6</option>
+                                            <option value="7" style="color:black;">7</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md align-items-end">
+                            <div class="form-group">
+                                <label for="#">Min. Banyo Sayısı</label>
+                                <div class="form-field">
+                                    <div class="select-wrap">
+                                        <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+                                        <select asp-for="MinimumBathroomCount" class="form-control">
+                                            <option value="1" style="color:black;">1</option>
+                                            <option value="2" style="color:black;">2</option>
+                                            <option value="3" style="color:black;">3</option>
+                                            <option value="4" style="color:black;">4</option>
+                                            <option value="5" style="color:black;">5</option>
+                                            <option value="6" style="color:black;">6</option>
+                                            <option value="7" style="color:black;">7</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md align-items-end">
+                            <div class="form-group">
+                                <label for="#">Min Fiyat <span>(TL)</span></label>
+                                <div class="form-field">
+                                    <div class="icon"><span class="icon-pencil"></span></div>
+                                    <input type="text" asp-for="MinimumPrice" class="form-control" placeholder="Min Fiyat">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md align-items-end">
+                            <div class="form-group">
+                                <label for="#">Max Fiyat <span>(TL)</span></label>
+                                <div class="form-field">
+                                    <div class="icon"><span class="icon-pencil"></span></div>
+                                    <input type="text" asp-for="MaximumPrice" class="form-control" placeholder="Max Fiyat">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md align-items-end">
+                            <div class="form-group">
+                                <label for="#">Min m2 <span>(m2)</span></label>
+                                <div class="form-field">
+                                    <div class="icon"><span class="icon-pencil"></span></div>
+                                    <input type="text" asp-for="MinimumAreaSize" class="form-control" placeholder="Min Area">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md align-items-end">
+                            <div class="form-group">
+                                <label for="#">Max m2 <span>(m2)</span></label>
+                                <div class="form-field">
+                                    <div class="icon"><span class="icon-pencil"></span></div>
+                                    <input type="text" asp-for="MaximumAreaSize" class="form-control" placeholder="Max Area">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md align-self-end">
+                            <div class="form-group">
+                                <div class="form-field">
+                                    <input type="submit" value="Ara" class="form-control btn btn-primary">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

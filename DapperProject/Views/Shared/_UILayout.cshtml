@@ -1,0 +1,188 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Royal Estate - Dapper</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="~/royalestate-master/css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="~/royalestate-master/css/animate.css">
+
+    <link rel="stylesheet" href="~/royalestate-master/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/royalestate-master/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="~/royalestate-master/css/magnific-popup.css">
+
+    <link rel="stylesheet" href="~/royalestate-master/css/aos.css">
+
+    <link rel="stylesheet" href="~/royalestate-master/css/ionicons.min.css">
+
+    <link rel="stylesheet" href="~/royalestate-master/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="~/royalestate-master/css/jquery.timepicker.css">
+
+
+    <link rel="stylesheet" href="~/royalestate-master/css/flaticon.css">
+    <link rel="stylesheet" href="~/royalestate-master/css/icomoon.css">
+    <link rel="stylesheet" href="~/royalestate-master/css/style.css">
+</head>
+<body>
+    <div class="top">
+        <div class="container">
+            <div class="row d-flex align-items-center">
+                <div class="col">
+                    <p class="social d-flex">
+                        <a href="#"><span class="icon-facebook"></span></a>
+                        <a href="#"><span class="icon-twitter"></span></a>
+                        <a href="#"><span class="icon-google"></span></a>
+                        <a href="#"><span class="icon-pinterest"></span></a>
+                    </p>
+                </div>
+                <div class="col d-flex justify-content-end">
+                    <p class="num"><span class="icon-phone"></span> + 90553 580 26 56</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="/Default/Index">Royal<span>estate</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="oi oi-menu"></span> Menu
+            </button>
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a href="/Default/Index" class="nav-link">Ana Sayfa</a></li>
+                    <li class="nav-item"><a href="/Property/Index" class="nav-link">İlanlar</a></li>
+                    <li class="nav-item"><a href="/Agent/Index" class="nav-link">Emlakçılar</a></li>
+                    <li class="nav-item"><a href="/About/Index" class="nav-link">Hakkımızda</a></li>
+                    <li class="nav-item"><a href="/Contact/Index" class="nav-link">İletişim</a></li>
+                    <li class="nav-item"><a href="/Admin/Dashboard/Index" class="nav-link">Admin Paneli</a></li>
+
+                </ul>
+            </div>
+  
+        </div>
+    </nav>
+    <div class="hero-wrap" style="background-image: url('/royalestate-master/images/bg_1.jpg');">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text align-items-center justify-content-center">
+                <div class="col-md-9 ftco-animate text-center">
+                    <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Ana Sayfa</a></span> <span>@ViewData["PageTitle"]</span></p>
+                    <h1 class="mb-3 bread">@ViewData["PageTitle"]</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    @RenderBody()
+    ﻿
+    <section class="ftco-section-parallax">
+        <div class="parallax-img d-flex align-items-center">
+            <div class="container">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
+                        <h2>Mail Bültenine Abone Olun</h2>
+                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in</p>
+                        <div class="row d-flex justify-content-center mt-5">
+                            <div class="col-md-8">
+                                <form action="#" class="subscribe-form">
+                                    <div class="form-group d-flex">
+                                        <input type="text" class="form-control" placeholder="Enter email address">
+                                        <input type="submit" value="Subscribe" class="submit px-3">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="ftco-footer  ftco-section">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-md">
+                    <div class="ftco-footer-widget mb-4">
+                        <h2 class="ftco-heading-2">Royalestate</h2>
+                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                        <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                            <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                            <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                            <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="ftco-footer-widget mb-4 ml-md-5">
+                        <h2 class="ftco-heading-2">Satın Al</h2>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="py-2 d-block">Satılık Mülkler</a></li>
+                            <li><a href="#" class="py-2 d-block">Kiralık Mülkler</a></li>
+                            <li><a href="#" class="py-2 d-block">New Listing</a></li>
+                            <li><a href="#" class="py-2 d-block">Recently Reduce</a></li>
+                            <li><a href="#" class="py-2 d-block">Off-Market Homes</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="ftco-footer-widget mb-4">
+                        <h2 class="ftco-heading-2">Sat</h2>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="py-2 d-block">Evini Sat</a></li>
+                            <li><a href="#" class="py-2 d-block">Get A Home Valuation</a></li>
+                            <li><a href="#" class="py-2 d-block">Bölgesel Fiyatlar</a></li>
+                            <li><a href="#" class="py-2 d-block">Rehber &amp; Kurallar</a></li>
+                            <li><a href="#" class="py-2 d-block">Diğer</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="ftco-footer-widget mb-4">
+                        <h2 class="ftco-heading-2">Bize Ulaşın</h2>
+                        <div class="block-23 mb-3">
+                            <ul>
+                                <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
+                                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
+                                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@yourdomain.com</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center">
+
+                    <p>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="~/royalestate-master/js/jquery.min.js"></script>
+    <script src="~/royalestate-master/js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="~/royalestate-master/js/popper.min.js"></script>
+    <script src="~/royalestate-master/js/bootstrap.min.js"></script>
+    <script src="~/royalestate-master/js/jquery.easing.1.3.js"></script>
+    <script src="~/royalestate-master/js/jquery.waypoints.min.js"></script>
+    <script src="~/royalestate-master/js/jquery.stellar.min.js"></script>
+    <script src="~/royalestate-master/js/owl.carousel.min.js"></script>
+    <script src="~/royalestate-master/js/jquery.magnific-popup.min.js"></script>
+    <script src="~/royalestate-master/js/aos.js"></script>
+    <script src="~/royalestate-master/js/jquery.animateNumber.min.js"></script>
+    <script src="~/royalestate-master/js/bootstrap-datepicker.js"></script>
+    <script src="~/royalestate-master/js/jquery.timepicker.min.js"></script>
+    <script src="~/royalestate-master/js/scrollax.min.js"></script>
+    <script src="~/royalestate-master/js/google-map.js"></script>
+    <script src="~/royalestate-master/js/main.js"></script>
+</body>
+</html>

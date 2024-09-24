@@ -1,0 +1,96 @@
+﻿@model DapperProject.Dtos.PropertyDtos.CreatePropertyDto
+@{
+    ViewData["Title"] = "CreateProperty";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-md-12 mt-5">
+    <div class="white_shd full margin_bottom_30">
+        <div class="full graph_head">
+            <div class="heading1 margin_0">
+                <h2>Yeni İlan Girişi</h2>
+            </div>
+        </div>
+        <div class="table_section padding_infor_info">
+            <div class="table-responsive-sm">
+                <form method="post">
+                    <div class="form-group">
+                        <label>İlan Başlığı</label>
+                        <input type="text" class="form-control" name="PropertyName" />
+                        <span asp-validation-for="PropertyName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label>Metre Kare</label>
+                        <input type="number" class="form-control" name="AreaSize" />
+                        <span asp-validation-for="AreaSize" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label>Yatak Sayısı</label>
+                        <input type="number" class="form-control" name="BedroomCount" />
+                        <span asp-validation-for="BedroomCount" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label>Banyo Sayısı</label>
+                        <input type="number" class="form-control" name="BathroomCount" />
+                        <span asp-validation-for="BathroomCount" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label>İlan Açıklaması</label>
+                        <textarea name="Description" class="form-control" cols="5" rows="5"></textarea>
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label>Video Linki</label>
+                        <input type="text" class="form-control" name="VideoUrl" />
+                        <span asp-validation-for="VideoUrl" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label>Fiyat</label>
+                        <input type="number" step="0.01" class="form-control" name="Price" />
+                        <span asp-validation-for="Price" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label>Kategori</label>
+                        @Html.DropDownListFor(x => x.CategoryId, (SelectList)ViewBag.categories, "Kategori Seçiniz", new { @class = "form-control" })
+                        <span asp-validation-for="CategoryId" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label>Lokasyon</label>
+                        @Html.DropDownListFor(x => x.LocationId, (SelectList)ViewBag.locations, "Lokasyon Seçiniz", new { @class = "form-control" })
+                        <span asp-validation-for="LocationId" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label>Görsel 1</label>
+                        <input type="text" class="form-control" name="ImageUrl1" />
+                        <span asp-validation-for="ImageUrl1" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label>Görsel 2</label>
+                        <input type="text" class="form-control" name="ImageUrl2" />
+                        <span asp-validation-for="ImageUrl2" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label>Görsel 3</label>
+                        <input type="text" class="form-control" name="ImageUrl3" />
+                        <span asp-validation-for="ImageUrl3" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label>Adres</label>
+                        <input type="text" class="form-control" name="Address" />
+                        <span asp-validation-for="Address" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label>İlan Durumu</label>
+                        <select class="form-control" name="Status">
+                            <option value="">İlan Durumu Seçiniz</option>
+                            <option value="One Cıkan">1</option>
+                            <option value="One Cıkmayan">0</option>
+                        </select>
+                        <span asp-validation-for="Status" class="text-danger"></span>
+                    </div>
+                    <button type="submit" class="btn btn-success">Kaydet</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

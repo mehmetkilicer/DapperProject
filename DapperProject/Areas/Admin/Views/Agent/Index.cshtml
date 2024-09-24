@@ -1,0 +1,53 @@
+﻿@model List<DapperProject.Dtos.AgentDtos.ResultAgentDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<div class="col-md-12 mt-5">
+    <div class="white_shd full margin_bottom_30">
+        <div class="full graph_head">
+            <div class="heading1 margin_0">
+                <h2>Emlakçılar Listesi</h2>
+            </div>
+        </div>
+        <div class="table_section padding_infor_info">
+            <div class="table-responsive-sm">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Adı Soyadı</th>
+                            <th>Hakkında Açıklama</th>
+                            <th>Sil</th>
+                            <th>Güncelle</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model.Count > 0)
+                        {
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.AgentId</td>
+                                    <td><img src="@item.ImageUrl" class="img-thumbnail" style="border-radius:50%; width:60px;height:60px;"/> @item.AgentName</td>
+                                    <td>@item.Description</td>
+                                    <td><a href="/Admin/Agent/DeleteAgent/@item.AgentId" class="btn btn-danger">Sil</a></td>
+                                    <td><a href="/Admin/Agent/UpdateAgent/@item.AgentId" class="btn btn-warning">Güncelle</a></td>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <div class="alert alert-warning">Herhangi bir kayıt bulunamadı.</div>
+                        }
+
+                    </tbody>
+                </table>
+                <a href="/Admin/Agent/CreateAgent" class="btn btn-primary">Yeni Emlakçı Girişi</a>
+            </div>
+        </div>
+    </div>
+</div>

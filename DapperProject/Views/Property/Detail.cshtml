@@ -1,0 +1,130 @@
+﻿@{
+    ViewData["Title"] = "Details";
+    ViewData["PageTitle"] = "İlan Detayları";
+    Layout = "~/Views/Shared/_UILayout.cshtml";
+}
+
+<section class="ftco-search">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 search-wrap">
+                <h2 class="heading h5 d-flex align-items-center pr-4"><span class="ion-ios-search mr-3"></span> Ara...</h2>
+                <form asp-action="SearchProperty" asp-controller="Property" method="post" class="search-property">
+                    <div class="row">
+                        <div class="col-md align-items-end">
+                            <div class="form-group">
+                                <label for="#">Emlak Kategori</label>
+                                <div class="form-field">
+                                    <div class="select-wrap">
+                                        <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+                                        <select class="form-control text-black">
+                                            <!-- Seçenekler -->
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md align-items-end">
+                            <div class="form-group">
+                                <label for="#">Min. Yatak Odası</label>
+                                <div class="form-field">
+                                    <div class="select-wrap">
+                                        <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+                                        <select class="form-control">
+                                            <!-- Seçenekler -->
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md align-items-end">
+                            <div class="form-group">
+                                <label for="#">Min. Banyo Sayısı</label>
+                                <div class="form-field">
+                                    <div class="select-wrap">
+                                        <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+                                        <select class="form-control">
+                                            <!-- Seçenekler -->
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md align-items-end">
+                            <div class="form-group">
+                                <label for="#">Min Fiyat <span>(TL)</span></label>
+                                <div class="form-field">
+                                    <div class="icon"><span class="icon-pencil"></span></div>
+                                    <input class="form-control" placeholder="Min Fiyat">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md align-items-end">
+                            <div class="form-group">
+                                <label for="#">Max Fiyat <span>(TL)</span></label>
+                                <div class="form-field">
+                                    <div class="icon"><span class="icon-pencil"></span></div>
+                                    <input class="form-control" placeholder="Max Fiyat">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md align-items-end">
+                            <div class="form-group">
+                                <label for="#">Min m² <span>(m²)</span></label>
+                                <div class="form-field">
+                                    <div class="icon"><span class="icon-pencil"></span></div>
+                                    <input class="form-control" placeholder="Min Area">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md align-items-end">
+                            <div class="form-group">
+                                <label for="#">Max m² <span>(m²)</span></label>
+                                <div class="form-field">
+                                    <div class="icon"><span class="icon-pencil"></span></div>
+                                    <input class="form-control" placeholder="Max Area">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md align-self-end">
+                            <div class="form-group">
+                                <div class="form-field">
+                                    <input type="submit" value="Ara" class="form-control btn btn-primary">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ftco-section">
+    <div class="container">
+        <div class="row">
+            <!-- İlan Detayları -->
+            @await Component.InvokeAsync("PropertyDetailsComponentPartial", Model)
+
+            <!-- Yan yana gelmesi istenen kısım -->
+            <div class="col-lg-12 sidebar ftco-animate">
+                <div class="d-flex justify-content-between">
+                    <!-- Kategoriler ComponentPartial -->
+                    <div class="w-50 pr-2">
+                        @await Component.InvokeAsync("PropertyDetailsCategoriesComponentPartial")
+                    </div>
+                    <!-- Etiketler ComponentPartial -->
+                    <div class="w-20 pl-2">
+                        @await Component.InvokeAsync("DetailTagColudsComponentPartial")
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@await Component.InvokeAsync("HomePageRecentPropertyComponentPartial")
+

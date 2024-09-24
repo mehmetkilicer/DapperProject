@@ -1,0 +1,127 @@
+﻿@model DapperProject.Dtos.PaginatedListDtos.PaginatedList<DapperProject.Dtos.PropertyDtos.ResultPropertyWithCategoryAndLocationDto>
+
+@{
+    ViewData["Title"] = "Potföy";
+    Layout = "~/Views/Shared/_UILayout.cshtml";
+}
+
+@* <div class="hero-wrap" style="background-image: url('/royalestate-master/images/bg_1.jpg');">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+            <div class="col-md-9 ftco-animate text-center">
+                <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Anasayfa</a></span> <span>Emlak</span></p>
+                <h1 class="mb-3 bread">Emlak</h1>
+            </div>
+        </div>
+    </div>
+</div> *@
+<section class="ftco-section bg-light">
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4 ftco-animate">
+                    <div class="properties">
+                        <a href="/Property/Detail/@item.PropertyId" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(@item.ImageUrl1);">
+                            <div class="icon d-flex justify-content-center align-items-center">
+                                <span class="icon-search2"></span>
+                            </div>
+                        </a>
+                        @if (item.ForRent)
+                        {
+                            <div class="text p-3">
+                                <span class="status rent">Kiralık</span>
+                                <div class="d-flex">
+                                    <div>
+                                        <div class="col-12">
+                                            <div>
+                                                <h3><a href="property-single.html">@item.PropertyName</a></h3>
+                                                <p>@item.CategoryName</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="two">
+                                                <span class="price">@item.Price.ToString("c")</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p>@item.Address</p>
+                                <hr>
+                                <p class="bottom-area d-flex">
+                                    <span><i class="flaticon-selection"></i> @item.AreaSize m2</span>
+                                    <span class="ml-auto"><i class="flaticon-bathtub"></i> @item.BathroomCount</span>
+                                    <span><i class="flaticon-bed"></i> @item.BedroomCount</span>
+                                </p>
+                            </div>
+                        }
+                        else if (item.ForSale)
+                        {
+                            <div class="text p-3">
+                                <span class="status sale">Satılık</span>
+                                <div class="d-flex">
+                                    <div>
+                                        <div class="col-12">
+                                            <div>
+                                                <h3><a href="property-single.html">@item.PropertyName</a></h3>
+                                                <p>@item.CategoryName</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="two">
+                                                <span class="price">@item.Price.ToString("c")</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p>@item.Address</p>
+                                <hr>
+                                <p class="bottom-area d-flex">
+                                    <span><i class="flaticon-selection"></i> @item.AreaSize m2</span>
+                                    <span class="ml-auto"><i class="flaticon-bathtub"></i> @item.BathroomCount</span>
+                                    <span><i class="flaticon-bed"></i> @item.BedroomCount</span>
+                                </p>
+                            </div>
+                        }
+
+                    </div>
+                </div>
+            }
+        </div>
+        <div>
+        </div>
+        <div class="row mt-5">
+            <div class="col text-center">
+                <div class="block-27">
+                    <ul>
+                        @if (Model.HasPreviousPage)
+                        {
+                            <li><a asp-action="Index" asp-route-pageIndex="@(Model.PageIndex - 1)">&lt;</a></li>
+                        }
+                        @for (var i = 1; i <= Model.TotalPages; i++)
+                        {
+                            if (i == Model.PageIndex)
+                            {
+                                <li><a class="active" href="#">@i</a></li>
+                            }
+                            else
+                            {
+                                <li><a asp-action="Index" asp-route-pageIndex="@i">@i</a></li>
+
+                            }
+                        }
+
+                        @if (Model.HasNextPage)
+                        {
+                            <li><a asp-action="Index" asp-route-pageIndex="@(Model.PageIndex + 1)">&gt;</a></li>
+                        }
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@await Component.InvokeAsync("HomePageNewsletterComponentPartial") 

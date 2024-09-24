@@ -1,0 +1,12 @@
+﻿@model List<DapperProject.Dtos.TagDtos.ResultTagDto>
+
+
+<div class="sidebar-box ftco-animate">
+    <h3>Etiketler</h3>
+    <div class="tagcloud">
+        @foreach (var item in Model)
+        {
+            <a href="#" class="tag-cloud-link">@item.TagName</a>
+        }
+    </div>
+</div>

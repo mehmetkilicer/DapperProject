@@ -1,0 +1,27 @@
+﻿@model DapperProject.Dtos.PropertyDtos.GetByIdPropertyWithCategoryAndLocationDto
+
+<div class="col-md-12 ftco-animate">
+    <div class="single-slider owl-carousel">
+
+            <div class="item">
+                <div class="properties-img" style="background-image: url(@Model.ImageUrl1);"></div>
+            </div>
+        
+    </div>
+</div>
+<div class="col-md-12 Properties-single mt-4 mb-5 ftco-animate">
+    <h2>@Model.PropertyName</h2>
+    <p class="rate mb-4">
+        <span class="loc"><a href="#"><i class="icon-map"></i> @Model.Address / @Model.LocationName</a></span>
+    </p>
+ @Html.Raw(Model.Description)
+</div>
+<div class="col-md-12 properties-single ftco-animate mb-5 mt-4">
+    <h3 class="mb-4">Video</h3>
+    <div class="block-16">
+        <figure>
+            <img src="@Model.ImageUrl1" alt="Image placeholder" class="img-fluid">
+            <a href="@Model.VideoUrl" class="play-button popup-vimeo"><span class="icon-play"></span></a>
+        </figure>
+    </div>
+</div>

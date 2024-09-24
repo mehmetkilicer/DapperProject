@@ -1,0 +1,37 @@
+﻿@model DapperProject.Dtos.AgentDtos.UpdateAgentDto
+
+@{
+    ViewData["Title"] = "UpdateAgent";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-md-12 mt-5">
+    <div class="white_shd full margin_bottom_30">
+        <div class="full graph_head">
+            <div class="heading1 margin_0">
+                <h2>Yeni Emlakçı Girişi</h2>
+            </div>
+        </div>
+        <div class="table_section padding_infor_info">
+            <div class="table-responsive-sm">
+                <form method="post">
+                    <input type="hidden" asp-for="AgentId" /> <!-- AgentId'yi burada gizli alan olarak kullanıyoruz -->
+
+                    <div class="form-group">
+                        <label>Ad Soyad</label>
+                        <input type="text" class="form-control" asp-for="@Model.AgentFullName" />
+                    </div>
+                    <div class="form-group">
+                        <label>Görsel Link</label>
+                        <input type="text" class="form-control" asp-for="@Model.ImageUrl" />
+                    </div>
+                    <div class="form-group">
+                        <label>Açıklama</label>
+                        <textarea class="form-control" asp-for="Title" cols="10" rows="10">@Model.Title</textarea>
+                    </div>
+                    <button type="submit" class="btn btn-success">Kaydet</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

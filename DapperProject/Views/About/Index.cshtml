@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_UILayout.cshtml";
+}
+
+
+<section class="ftco-section ftc-no-pb">
+    <div class="container">
+        <div class="row no-gutters">
+            <div class="col-md-5 p-md-5 img img-2 d-flex justify-content-center align-items-center" style="background-image: url(/royalestate-master/images/about.jpg);">
+                <a href="https://vimeo.com/45830194" class="icon popup-vimeo d-flex justify-content-center align-items-center">
+                    <span class="icon-play"></span>
+                </a>
+            </div>
+            <div class="col-md-7 wrap-about pb-md-5 ftco-animate">
+                <div class="heading-section heading-section-wo-line mb-5 pl-md-5">
+                    <div class="pl-md-5 ml-md-5">
+                        <span class="subheading">Hakkımızda</span>
+                        <h2 class="mb-4">Gayrimenkul Sektöründe Güven ve Tecrübe</h2>
+                    </div>
+
+                </div>
+                <div class="pl-md-5 ml-md-5 mb-5">
+                    <p>Biz, yıllardır gayrimenkul sektöründe güvenilir, hızlı ve yenilikçi hizmet anlayışımızla müşterilerimize en iyi çözümleri sunmayı hedefleyen bir emlak firmasıyız. Müşteri memnuniyetini her zaman ön planda tutarak, ihtiyaçlarınıza en uygun gayrimenkul seçeneklerini bulmanıza yardımcı oluyoruz.</p>
+
+                    <p>Yerli ve yabancı müşterilere geniş bir portföy sunarak, daire, villa, iş yeri ve arsa gibi farklı gayrimenkul seçeneklerini en avantajlı fiyatlarla sizlere sunmaktayız. Emlak sektöründeki uzun yıllara dayanan deneyimimiz ve profesyonel ekibimizle, her adımda yanınızda yer alıyoruz.</p>
+
+                    <p><a href="#" class="btn-custom">Daha Fazla Bilgi <span class="ion-ios-arrow-forward"></span></a></p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+@await Component.InvokeAsync("HomePageStatisticsComponentPartial")
+@await Component.InvokeAsync("HomePageTestimonialComponentPartial")
+
