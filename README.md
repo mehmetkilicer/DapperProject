@@ -13,7 +13,7 @@ Bu projenin temel amacı, kullanıcıların emlak ilanlarını rahatça görünt
 - **Sayfalama**: Uzun ilan listelerini daha yönetilebilir hale getiren sayfalama özelliği.
 - **Kaggle Verileri**: Gerçek emlak verileri ile uygulamanın gerçekçilik ve işlevselliğini artırma.
 
-- 
+  
 ![Ekran görüntüsü 2024-09-24 223138](https://github.com/user-attachments/assets/4d8f9a75-a44b-4b55-b9c9-8513ada77ff9)
 ![Ekran görüntüsü 2024-09-24 223105](https://github.com/user-attachments/assets/0a3abd26-649d-423d-93ae-7d58707fb5a5)
 ![Ekran görüntüsü 2024-09-24 223043](https://github.com/user-attachments/assets/1fb5c887-b9fd-46af-9898-7974ff681288)
